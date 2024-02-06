@@ -41,4 +41,21 @@ body {
 .article-card-img{
     width: 100%;
     height: auto;
+
+}
+
+.comment-author-font{
+    font-size: 3vw;
+}
+
+.custom-show-hide-button{
+  
+    font-size: 3vw;
+}
+
+.comment-bg-color{
+    background-color: rgb(241, 251, 255);
+    border: 3px solid rgb(197, 197, 197);
+    
+
 }
