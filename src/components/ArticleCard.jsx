@@ -25,6 +25,7 @@ export default function ArticleCard(){
         <p className="col-12 text-center custom-font-size custom-margin" >The worlds most interesting article is loading... Please wait.</p>
         )
     }
+
     return(
         <div className="container-fluid p-3 bg-light">
             <div>

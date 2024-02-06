@@ -41,6 +41,7 @@ body {
 .article-card-img{
     width: 100%;
     height: auto;
+
 }
 
 .comment-author-font{
@@ -56,4 +57,5 @@ body {
     background-color: rgb(241, 251, 255);
     border: 3px solid rgb(197, 197, 197);
     
+
 }

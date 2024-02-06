@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { getCommentsById } from "./Utils/getCommentsById";
 import { useParams } from "react-router";
@@ -45,3 +46,14 @@ export default function Comments() {
     </Expandable>
   );
 }
+
+
+export default function Comments(){
+    const [comments, setComments] = useState([])
+    return(
+        comments.map((comment)=>{
+            <p>comment</p>
+        })
+    )
+}
+
