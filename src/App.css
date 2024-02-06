@@ -3,7 +3,8 @@ body {
   }
 
 .display-picture{
-    width: 15%;
+    width: 10%;
+    height: auto;
     border-radius: 50%;
     position: relative;
     margin-left: 50%;
@@ -18,7 +19,7 @@ body {
 }
 
 .custom-header-size{
-    font-size: 100%;
+    font-size: 5vw;
 }
 
 .screen-size{
@@ -27,4 +28,32 @@ body {
 
 .article-size{
     width: 40%;
+}
+
+.paragraph-font-size{
+    font-size: 2vw;
+}
+
+.article-header-font-size{
+    font-size: 4vw;
+}
+
+.article-card-img{
+    width: 100%;
+    height: auto;
+}
+
+.comment-author-font{
+    font-size: 3vw;
+}
+
+.custom-show-hide-button{
+  
+    font-size: 3vw;
+}
+
+.comment-bg-color{
+    background-color: rgb(241, 251, 255);
+    border: 3px solid rgb(197, 197, 197);
+    
 }
