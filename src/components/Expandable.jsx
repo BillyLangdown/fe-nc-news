@@ -9,7 +9,7 @@ export default function Expandable({children, contentDescriptor}){
     };
 
     return (
-        <div className="">
+        <div>
             <button type="button" className="custom-show-hide-button" onClick={toggleHidden}> {isCommentsHidden ? "Show" : "Hide"}</button>
             {isCommentsHidden ? null : children}
         </div>

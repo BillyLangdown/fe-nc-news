@@ -32,7 +32,7 @@ export default function Comments() {
 
 
   return (
-    <Expandable>
+    <Expandable contentDescriptor= {comments} >
     <div>
       {comments.map((comment, index) => {
         return (
@@ -48,12 +48,5 @@ export default function Comments() {
 }
 
 
-export default function Comments(){
-    const [comments, setComments] = useState([])
-    return(
-        comments.map((comment)=>{
-            <p>comment</p>
-        })
-    )
-}
+
 
