@@ -16,7 +16,7 @@ const [articles, setArticles] = useState([]);
 
   if(isLoading){
     return(
-        <p className="col-12 text-center custom-font-size custom-margin" >The worlds most interesting articles are loading... Please wait.</p>
+        <p className="col-12 text-center custom-font-size custom-margin" >Mind-blowing articles are loading... Please wait.</p>
     )
   }
 
