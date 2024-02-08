@@ -3,10 +3,12 @@ import { useEffect, useState } from "react";
 import { getCommentsById } from "./Utils/api";
 import { useParams } from "react-router";
 import Expandable from "./Expandable";
+import CommentAdder from "./CommentAdder";
 
 export default function Comments() {
   const [comments, setComments] = useState([]);
   const [isLoadingComments, setIsLoadingComments] = useState(true);
+ 
   
   
 
@@ -19,8 +21,15 @@ export default function Comments() {
     getCommentsById(article_id).then((response) => {
       setComments(response);
       setIsLoadingComments(false);
+      
     });
-  }, []);
+  }, [handleNewComment]);
+
+  function handleNewComment(newComment){
+    setComments([newComment, ...comments])
+  }
+
+
 
   if (isLoadingComments) {
     return (
@@ -32,7 +41,8 @@ export default function Comments() {
 
 
   return (
-    <Expandable contentDescriptor= {comments} >
+    <Expandable contentDescriptor= {comments} >  
+    <CommentAdder onNewComment={handleNewComment} article_id={article_id} setComments={setComments} />
     <div>
       {comments.map((comment, index) => {
         return (
@@ -43,6 +53,7 @@ export default function Comments() {
         );
       })}
     </div>
+  
     </Expandable>
   );
 }

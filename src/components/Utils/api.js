@@ -34,3 +34,15 @@ export function patchArticleVotesById(id, voteCount) {
       console.log(response.data, "vote counted");
     });
 }
+
+export function postCommentOnArticle(id, newComment) {
+  console.log(newComment, "new comment");
+  return axios
+    .post(`https://nc-news-api-vw2o.onrender.com/api/articles/${id}/comments`, {
+      body: newComment,
+      author: "cooljmessy",
+    })
+    .then(() => {
+      console.log("successful post");
+    });
+}
