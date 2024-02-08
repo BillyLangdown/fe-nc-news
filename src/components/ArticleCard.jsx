@@ -1,8 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { getArticleById } from "./Utils/getArticleById";
+import { getArticleById } from "./Utils/api";
 import Comments from "./Comments";
+import Votes from "./Votes";
 
 export default function ArticleCard() {
   const [isLoadingArticle, setIsLoadingArticle] = useState(true);
@@ -14,7 +15,7 @@ export default function ArticleCard() {
       setArticle(individualArticle);
       setIsLoadingArticle(false);
     });
-  }, [article_id]);
+  });
 
   if (isLoadingArticle) {
     return (
@@ -26,7 +27,7 @@ export default function ArticleCard() {
 
   return (
     <div className="container-fluid p-3 bg-light">
-      <div>
+      <div className="m-3">
         <h5 className="article-header-font-size">{article.title}</h5>
         <p className="paragraph-font-size ">
           {article.created_at.slice(0, 10)}
@@ -35,12 +36,12 @@ export default function ArticleCard() {
       <div className="d-flex justify-content-center m-3">
         <img className="article-card-img" src={article.article_img_url} />
       </div>
-      <p className="paragraph-font-size">{article.body}</p>
-      <div className="d-flex justify-content-between">
-        <p className="paragraph-font-size ">Votes: {article.votes}</p>
+      <p className="paragraph-font-size m-3">{article.body}</p>
+      <div className="d-flex justify-content-between d-flex align-items-center">
+        <Votes article = {article} article_id = {article_id} />
         <p className="paragraph-font-size">comments: {article.comment_count}</p>
       </div>
-      <Comments />
+      <Comments/>
     </div>
-  );
+  )
 }

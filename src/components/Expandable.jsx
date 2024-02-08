@@ -9,8 +9,8 @@ export default function Expandable({children, contentDescriptor}){
     };
 
     return (
-        <div>
-            <button type="button" className="custom-show-hide-button" onClick={toggleHidden}> {isCommentsHidden ? "Show" : "Hide"}</button>
+        <div className="d-flex flex-column">
+            <button type="button" className="custom-show-hide-button ml-auto p-2 " onClick={toggleHidden}> {isCommentsHidden ? "Show" : "Hide"}</button>
             {isCommentsHidden ? null : children}
         </div>
     )

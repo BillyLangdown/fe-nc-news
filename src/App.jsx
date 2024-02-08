@@ -8,7 +8,7 @@ import ArticleCard from "./components/ArticleCard";
 
 function App() {
   return (
-    <main >
+    <main className="m-2 p-3" >
       <Header />
       <NavBar />
       <Routes>
