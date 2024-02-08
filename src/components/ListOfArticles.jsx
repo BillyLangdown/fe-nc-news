@@ -1,7 +1,7 @@
 import ArticlePreview from "./ArticlePreview";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import {getArticles} from "./Utils/getArticles"
+import {getArticles} from "./Utils/api"
 
 export default function ListOfArticles() {
 const [articles, setArticles] = useState([]);

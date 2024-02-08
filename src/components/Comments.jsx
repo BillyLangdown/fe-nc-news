@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react";
-import { getCommentsById } from "./Utils/getCommentsById";
+import { getCommentsById } from "./Utils/api";
 import { useParams } from "react-router";
 import Expandable from "./Expandable";
 
