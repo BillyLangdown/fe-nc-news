@@ -1,11 +1,9 @@
 import { Link } from "react-router-dom";
 
-export default function NavBar({onTopicClick}) {
-
+export default function NavBar({ onTopicClick }) {
   const handleTopicClick = (topic) => {
-    onTopicClick(topic)
+    onTopicClick(topic);
   };
-
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light mx-4">
@@ -22,9 +20,9 @@ export default function NavBar({onTopicClick}) {
       </button>
       <div className="collapse navbar-collapse" id="navbarNavDropdown">
         <ul className="navbar-nav mx-lg-auto">
-          <li className="nav-item active">
+          <li className="nav-item">
             <Link to={"/"} className="nav-link">
-              Home <span className="sr-only">(current)</span>
+              Home
             </Link>
           </li>
           <li className="nav-item">
@@ -48,17 +46,14 @@ export default function NavBar({onTopicClick}) {
             >
               Topics
             </a>
-            <div
-              className="dropdown-menu"
-              aria-labelledby="navbarDropdownMenuLink"
-            >
-              <Link to="/coding" className="dropdown-item"  onClick={() => handleTopicClick("coding")} >
+            <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <Link to="/coding" className="dropdown-item" onClick={() => handleTopicClick("coding")}>
                 Coding
               </Link>
-              <Link to="/football" className="dropdown-item" href="#">
+              <Link to="/football" className="dropdown-item">
                 Football
               </Link>
-              <Link to="cooking" className="dropdown-item" href="#">
+              <Link to="cooking" className="dropdown-item">
                 Cooking
               </Link>
             </div>
@@ -68,5 +63,3 @@ export default function NavBar({onTopicClick}) {
     </nav>
   );
 }
-
-
