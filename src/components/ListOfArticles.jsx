@@ -2,19 +2,23 @@ import ArticlePreview from "./ArticlePreview";
 import { useState, useEffect } from "react";
 import {getArticles} from "./Utils/api"
 import { useParams } from "react-router";
+import { useSearchParams } from "react-router-dom";
 
 export default function ListOfArticles() {
-  const {topic} = useParams()
-  console.log(topic)
+
+const {topic} = useParams()
+
+
 const [articles, setArticles] = useState([]);
  const [isLoading, setIsLoading] = useState(true)
 
+
   useEffect(() => {
-    getArticles().then((response)=>{
+    getArticles(topic).then((response)=>{
     setArticles(response)
     setIsLoading(false)
    })
-  }, []);
+  }, [topic]);
 
   if(isLoading){
     return(
@@ -23,9 +27,9 @@ const [articles, setArticles] = useState([]);
   }
 
   return (
-    <div id="list" className="flex-column justify-content-center" >
+    <div id="list" className="container" >
       {articles.map((article) => {
-        return <ArticlePreview key={article.article_id} article={article} />;
+        return <ArticlePreview className='row col' key={article.article_id} article={article} />;
       })}
     </div>
   );

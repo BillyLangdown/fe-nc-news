@@ -10,17 +10,19 @@ function App() {
 
   const [topic, setTopic] = useState(null)
 
-
+  function onTopicClick(topic){
+    setTopic(topic)
+  }
 
 
   return (
     <main className="m-2 p-3" >
       <Header />
-      <NavBar />
+      <NavBar onTopicClick = {onTopicClick} />
       <Routes>
         <Route path="/" element={<ListOfArticles topic={topic} setTopic={setTopic}/>} />
         <Route path="/articles/:article_id" element={<ArticleCard />} />
-        <Route path="/:topic" element = {<ArticleCard/>}/>
+        <Route path= "/:topic" element = {<ListOfArticles currentTopic={topic}/>}/>
       </Routes>
     </main>
   );
