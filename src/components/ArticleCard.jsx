@@ -14,7 +14,7 @@ export default function ArticleCard() {
       setArticle(individualArticle);
       setIsLoadingArticle(false);
     });
-  });
+  }, [article_id]);
 
   if (isLoadingArticle) {
     return (
