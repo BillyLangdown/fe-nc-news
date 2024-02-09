@@ -1,9 +1,11 @@
 import ArticlePreview from "./ArticlePreview";
 import { useState, useEffect } from "react";
-import axios from "axios";
 import {getArticles} from "./Utils/api"
+import { useParams } from "react-router";
 
 export default function ListOfArticles() {
+  const {topic} = useParams()
+  console.log(topic)
 const [articles, setArticles] = useState([]);
  const [isLoading, setIsLoading] = useState(true)
 

@@ -18,29 +18,28 @@ export default function ArticleCard() {
 
   if (isLoadingArticle) {
     return (
-      <p className="col-12 text-center custom-font-size custom-margin">
-        The worlds most interesting article is loading... Please wait.
+      <p className="col-12 text-center lead mt-5">
+        The world's most interesting article is loading... Please wait.
       </p>
     );
   }
 
   return (
-    <div className="container-fluid p-3 bg-light">
+    <div className="container p-3 bg-light">
       <div className="m-3">
-        <h5 className="article-header-font-size">{article.title}</h5>
-        <p className="paragraph-font-size ">
-          {article.created_at.slice(0, 10)}
-        </p>
+        <h5 className="display-5">{article.title}</h5>
+        <p className="">{article.created_at.slice(0, 10)}</p>
       </div>
       <div className="d-flex justify-content-center m-3">
-        <img className="article-card-img" src={article.article_img_url} />
+        <img className="img-fluid rounded" src={article.article_img_url} alt="Article" />
       </div>
-      <p className="paragraph-font-size m-3">{article.body}</p>
-      <div className="d-flex justify-content-between d-flex align-items-center">
-        <Votes article = {article} article_id = {article_id} />
-        <p className="paragraph-font-size">comments: {article.comment_count}</p>
+      <p className="lead m-3">{article.body}</p>
+      <div className="d-flex justify-content-between align-items-center">
+        <Votes article={article} article_id={article_id} />
+        <p className="lead">Comments: {article.comment_count}</p>
       </div>
-      <Comments/>
+      <Comments />
     </div>
-  )
+  );
 }
+
