@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
 
-export default function NavBar() {
+export default function NavBar({onTopicClick}) {
+
+  const handleTopicClick = (topic) => {
+    onTopicClick(topic)
+  };
 
 
   return (
@@ -48,15 +52,15 @@ export default function NavBar() {
               className="dropdown-menu"
               aria-labelledby="navbarDropdownMenuLink"
             >
-              <Link to={"/"} className="dropdown-item" >
+              <Link to="/coding" className="dropdown-item"  onClick={() => handleTopicClick("coding")} >
                 Coding
               </Link>
-              <a className="dropdown-item" href="#">
+              <Link to="/football" className="dropdown-item" href="#">
                 Football
-              </a>
-              <a className="dropdown-item" href="#">
+              </Link>
+              <Link to="cooking" className="dropdown-item" href="#">
                 Cooking
-              </a>
+              </Link>
             </div>
           </li>
         </ul>

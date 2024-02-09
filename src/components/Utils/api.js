@@ -10,12 +10,14 @@ export function getArticleById(id) {
     });
 }
 
-export function getArticles() {
-  return axios
-    .get("https://nc-news-api-vw2o.onrender.com/api/articles")
-    .then(({ data }) => {
-      return data.articles;
-    });
+export function getArticles(topic) {
+  let url = `https://nc-news-api-vw2o.onrender.com/api/articles`;
+  if (topic && topic != ":topic") {
+    url += `?topic=${topic}`;
+  }
+  return axios.get(url).then(({ data }) => {
+    return data.articles;
+  });
 }
 
 export function getCommentsById(id) {
