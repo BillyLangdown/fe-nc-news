@@ -36,7 +36,6 @@ export function patchArticleVotesById(id, voteCount) {
 }
 
 export function postCommentOnArticle(id, newComment) {
-  console.log(newComment, "new comment");
   return axios
     .post(`https://nc-news-api-vw2o.onrender.com/api/articles/${id}/comments`, {
       body: newComment,
@@ -44,5 +43,18 @@ export function postCommentOnArticle(id, newComment) {
     })
     .then(() => {
       console.log("successful post");
+    })
+    .catch((err) => {
+      if (err) {
+        throw err;
+      }
+    });
+}
+
+export function deleteCommentByCommentId(comment_id) {
+  return axios
+    .delete(`https://nc-news-api-vw2o.onrender.com/api/comments/${comment_id}`)
+    .then(() => {
+      console.log("comment deleted");
     });
 }
