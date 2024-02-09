@@ -10,13 +10,17 @@ function App() {
 
   const [topic, setTopic] = useState(null)
 
+
+
+
   return (
     <main className="m-2 p-3" >
       <Header />
-      <NavBar topic={topic} setTopic={setTopic} />
+      <NavBar />
       <Routes>
         <Route path="/" element={<ListOfArticles topic={topic} setTopic={setTopic}/>} />
         <Route path="/articles/:article_id" element={<ArticleCard />} />
+        <Route path="/:topic" element = {<ArticleCard/>}/>
       </Routes>
     </main>
   );

@@ -1,8 +1,8 @@
 body {
     overflow-x: hidden;
-  }
+}
 
-.display-picture{
+.display-picture {
     width: 10%;
     height: auto;
     border-radius: 50%;
@@ -10,54 +10,30 @@ body {
     margin-left: 50%;
 }
 
-.custom-margin{
-    margin-top: 100px;
+.custom-margin {
+    margin-top: 5%; 
 }
 
-.custom-font-size{
-    font-size: 50%;
+.custom-font-size {
+    font-size: 1.5vw; 
 }
 
-.custom-header-size{
+.custom-header-size {
     font-size: 5vw;
 }
 
-.screen-size{
-    width: 100vw;
+.screen-size {
+    width: 100%;
 }
 
-.article-size{
-    width: 40%;
+.article-size {
+    width: 80%; 
+    max-width: 800px; 
+    margin: 0 auto; 
 }
 
-.paragraph-font-size{
-    font-size: 2.5vw;
+.paragraph-font-size {
+    font-size: 1.2vw;
 }
 
-.article-header-font-size{
-    font-size: 6vw;
-}
 
-.article-card-img{
-    width: 80%;
-    height: auto;
-
-}
-
-.comment-author-font{
-    font-size: 3vw;
-}
-
-.custom-show-hide-button{
-
-    font-size: 3vw;
-   
-  
-}
-
-.comment-bg-color{
-    background-color: rgb(241, 251, 255);
-    border: 3px solid rgb(197, 197, 197);
-    
-
-}
