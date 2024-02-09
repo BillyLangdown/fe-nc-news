@@ -23,6 +23,8 @@ function App() {
         <Route path="/" element={<ListOfArticles topic={topic} setTopic={setTopic}/>} />
         <Route path="/articles/:article_id" element={<ArticleCard />} />
         <Route path= "/:topic" element = {<ListOfArticles currentTopic={topic}/>}/>
+        <Route path= "/?sort-by=:option" element = {<ListOfArticles currentTopic={topic}/>}/>
+
       </Routes>
     </main>
   );
