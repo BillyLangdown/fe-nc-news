@@ -10,7 +10,6 @@ export default function Comments() {
   const [isLoadingComments, setIsLoadingComments] = useState(true);
   const [error, setError] = useState(false);
   const [isDeleted, setIsDeleted] = useState(false);
-
   const { article_id } = useParams();
 
   useEffect(() => {
@@ -25,7 +24,7 @@ export default function Comments() {
           setError(true);
         }
       });
-  }, [handleNewComment]);
+  }, [article_id]);
 
   if (error) {
     return (

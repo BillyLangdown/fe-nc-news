@@ -3,16 +3,19 @@ import Header from "./components/Header";
 import NavBar from "./components/NavBar";
 import ListOfArticles from "./components/ListOfArticles";
 import { Routes, Route } from "react-router-dom";
-
-import ArticleCard from "./components/ArticleCard";
+import ArticleCard from "./components/ArticleCard"
+import { useState } from 'react'
 
 function App() {
+
+  const [topic, setTopic] = useState(null)
+
   return (
     <main className="m-2 p-3" >
       <Header />
-      <NavBar />
+      <NavBar topic={topic} setTopic={setTopic} />
       <Routes>
-        <Route path="/" element={<ListOfArticles />} />
+        <Route path="/" element={<ListOfArticles topic={topic} setTopic={setTopic}/>} />
         <Route path="/articles/:article_id" element={<ArticleCard />} />
       </Routes>
     </main>
