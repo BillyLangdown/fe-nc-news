@@ -16,6 +16,7 @@ export default function ArticlePreview({ article }) {
             <h4 className="h5 mb-1">{article.title}</h4>
             <p className="mb-1">Topic: {article.topic}</p>
             <p className="mb-1">Votes: {article.votes}</p>
+            <p className="mb-1">Comments: {article.comment_count}</p>
             <p className="mb-0">Date: {new Date(article.created_at).toISOString().slice(0, 10)}</p>
           </div>
         </div>

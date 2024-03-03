@@ -41,7 +41,7 @@ export default function ArticlesSorter({ articles, onSort }) {
         <select id="sortBy" value={sortBy} onChange={handleSortChange} className="form-select">
           <option value="date">Date</option>
           <option value="votes">Votes</option>
-          <option value="commentCount">Comment Count</option>
+          <option value="comment_count">Comments</option>
         </select>
       </div>
 
