@@ -24,11 +24,13 @@ export default function ArticleCard() {
     );
   }
 
+
+
   return (
     <div className="container p-3 bg-light">
       <div className="m-3">
         <h5 className="display-5">{article.title}</h5>
-        <p className="">{article.created_at.slice(0, 10)}</p>
+        <p className="">{new Date(article.created_at).toISOString().slice(0, 10)}</p>
       </div>
       <div className="d-flex justify-content-center m-3">
         <img className="img-fluid rounded" src={article.article_img_url} alt="Article" />
