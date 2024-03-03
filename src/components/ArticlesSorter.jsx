@@ -22,10 +22,13 @@ export default function ArticlesSorter({ articles, onSort }) {
   function sortArticles() {
     const sortedArticles = [...articles];
     sortedArticles.sort((a, b) => {
+      const valueA = sortBy === 'date' ? new Date(a["created_at"]) : a[sortBy];
+      const valueB = sortBy === 'date' ? new Date(b["created_at"]) : b[sortBy];
+  
       if (sortOrder === "asc") {
-        return a[sortBy] - b[sortBy];
+        return valueA - valueB;
       } else {
-        return b[sortBy] - a[sortBy];
+        return valueB - valueA;
       }
     });
     return sortedArticles;
