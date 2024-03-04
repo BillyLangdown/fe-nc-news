@@ -5,6 +5,8 @@ import ListOfArticles from "./components/ListOfArticles";
 import { Routes, Route } from "react-router-dom";
 import ArticleCard from "./components/ArticleCard"
 import { useState } from 'react'
+import PostArticle from "./components/PostArticle";
+import Profile from "./components/Profile";
 
 function App() {
 
@@ -24,6 +26,8 @@ function App() {
         <Route path="/articles/:article_id" element={<ArticleCard />} />
         <Route path= "/:topic" element = {<ListOfArticles currentTopic={topic}/>}/>
         <Route path= "/?sort-by=:option" element = {<ListOfArticles currentTopic={topic}/>}/>
+        <Route path="/post-article" element = {<PostArticle/>}/>
+        <Route path="/profile" element = {<Profile/>}/>
 
       </Routes>
     </main>

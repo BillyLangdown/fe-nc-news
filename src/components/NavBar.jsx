@@ -26,14 +26,14 @@ export default function NavBar({ onTopicClick }) {
             </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <Link to={"/post-article"} className="nav-link">
               Post
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
-              Profile
-            </a>
+          <Link to={"/profile"} className="nav-link">
+            profile
+            </Link>
           </li>
           <li className="nav-item dropdown">
             <a
