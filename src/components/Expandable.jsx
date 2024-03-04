@@ -10,8 +10,15 @@ export default function Expandable({children, contentDescriptor}){
 
     return (
         <div className="d-flex flex-column">
-            <button type="button" className="custom-show-hide-button ml-auto p-2 " onClick={toggleHidden}> {isCommentsHidden ? "Show" : "Hide"}</button>
-            {isCommentsHidden ? null : children}
+          <button
+            type="button"
+            className="btn btn-primary rounded-pill mt-3 p-2"
+            onClick={toggleHidden}
+            style={{ minWidth: '250px' }}
+          >
+            {isCommentsHidden ? "Show Comments" : "Hide Comments"}
+          </button>
+          {isCommentsHidden ? null : children}
         </div>
-    )
+      );
 }

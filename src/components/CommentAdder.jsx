@@ -39,27 +39,28 @@ export default function CommentAdder({ article_id, onNewComment }) {
   }
 
   return (
-    <div className="d-flex justify-content-center mt-3">
-      <form className="w-75" onSubmit={handleSubmit}>
-        <div className="mb-3">
-          <label htmlFor="comment-input" className="form-label">
-            Add Comment:
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="comment-input"
-            disabled={disabledInput}
-            value={newComment}
-            onChange={(event) => {
-              setNewComment(event.target.value);
-            }}
-          />
-        </div>
-        <button type="submit" className="btn btn-primary btn-xsm">
-          Submit
-        </button>
-      </form>
+<div className="mt-3">
+  <form className="d-flex justify-content-around flex-direction-row align-items-center" onSubmit={handleSubmit}>
+    <div className="" style={{ width: '80%' }}>
+      <input
+        type="text"
+        className="custom-input justify-content-around "
+        placeholder="add a comment"
+        id="comment-input"
+        disabled={disabledInput}
+        value={newComment}
+        onChange={(event) => setNewComment(event.target.value)}
+        
+      />
     </div>
+    <button type="submit" className="btn btn-primary btn-xsm custom-button">
+      Submit
+    </button>
+  </form>
+</div>
+
+  
+  
+
   );
 }

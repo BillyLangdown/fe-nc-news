@@ -6,7 +6,7 @@ export default function NavBar({ onTopicClick }) {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light mx-4">
+    <nav className="navbar navbar-expand-lg navbar-light mx-4">
       <button
         className="navbar-toggler"
         type="button"
