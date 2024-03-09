@@ -11,9 +11,9 @@ export default function CommentAdder({ article_id, onNewComment }) {
     setIsLoadingNewComment(true);
     setDisabledInput(true);
     event.preventDefault();
-    onNewComment(newComment);
     postCommentOnArticle(article_id, newComment)
-      .then(() => {
+    .then(() => {
+        onNewComment(newComment);
         setIsLoadingNewComment(false);
         setDisabledInput(false);
         setNewComment("");
