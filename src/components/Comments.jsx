@@ -5,12 +5,15 @@ import Expandable from "./Expandable";
 import CommentAdder from "./CommentAdder";
 import DeleteComment from "./DeleteComment";
 
-export default function Comments() {
+export default function Comments({onNewComment}) {
   const [comments, setComments] = useState([]);
   const [isLoadingComments, setIsLoadingComments] = useState(true);
   const [error, setError] = useState(false);
   const [isDeleted, setIsDeleted] = useState(false);
+  const [isNoComments, setIsNoComments] = useState(false)
   const { article_id } = useParams();
+
+
 
   useEffect(() => {
     getCommentsById(article_id)
@@ -19,12 +22,12 @@ export default function Comments() {
         setIsLoadingComments(false);
       })
       .catch((err) => {
-        if (err) {
-          setIsLoadingComments(false);
-          setError(true);
-        }
+       console.log(err.message)
+        
       });
   }, [article_id, onCommentDeleted]);
+
+ 
 
   if (error) {
     return (
@@ -36,6 +39,7 @@ export default function Comments() {
 
   function handleNewComment(newComment) {
     setComments([newComment, ...comments]);
+    onNewComment()
   }
 
   if (isLoadingComments) {
@@ -63,13 +67,23 @@ export default function Comments() {
     );
   }
 
-  return (
+
+
+  return ( isNoComments ? 
     <Expandable contentDescriptor={comments}>
       <CommentAdder
         onNewComment={handleNewComment}
         article_id={article_id}
         setComments={setComments}
+      /> </Expandable> :
+
+        <Expandable contentDescriptor={comments}>
+      <CommentAdder
+        onNewComment={handleNewComment}
+        article_id={article_id}
+        setComments={setComments}
       />
+
       <div className="mt-3">
         {deletedStatement}
         {comments.map((comment, index) => (

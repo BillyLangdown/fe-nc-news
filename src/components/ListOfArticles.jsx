@@ -25,23 +25,28 @@ export default function ListOfArticles() {
   return (
     <>
       <ArticlesSorter articles={articles} onSort={handleSort} />
-
+  
       <div id="list" className="container">
         {sortedArticles.length > 0
-          ? sortedArticles.map((article) => (
-              <ArticlePreview
-                className="row col"
-                key={article.article_id}
-                article={article}
-              />
-            ))
-          : articles.map((article) => (
-              <ArticlePreview
-                className="row col"
-                key={article.article_id}
-                article={article}
-              />
-            ))}
+          ? sortedArticles.map((article) => {
+              return (
+                <ArticlePreview
+                  className="row col"
+                  key={article.article_id}
+                  article={article}
+                />
+              );
+            })
+          : articles.map((article) => {
+             
+              return (
+                <ArticlePreview
+                  className="row col"
+                  key={article.article_id}
+                  article={article}
+                />
+              );
+            })}
       </div>
     </>
   );
