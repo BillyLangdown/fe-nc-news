@@ -19,7 +19,7 @@ function App() {
 
 
   return (
-    <main className="m-2 p-3" >
+    <main className="m-3 bg-light-orange">
       <Header />
       <NavBar onTopicClick = {onTopicClick} />
       <Routes>

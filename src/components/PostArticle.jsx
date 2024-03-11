@@ -13,15 +13,7 @@ export default function PostArticle() {
     const body = event.target[2].value;
     const article_img_url = event.target[3].value;
 
-    if (isValidURL(article_img_url)) {
-      postArticle(title, topic, body, article_img_url, author).then((response) => {
-       
-      });
-    } else {
-     
-      console.error("Invalid image URL");
  
-    }
   }
 
  

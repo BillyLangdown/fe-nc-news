@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function ArticlePreview({ article }) {
   return (
     <Link to={`/articles/${article.article_id}`} className="text-decoration-none">
-      <div className="container p-3 border rounded mb-3 overflow-x-hidden">
+      <div className="container p-3 border rounded mb-3 bg-white overflow-x-hidden">
         <div className="row">
           <div className="col-12 col-md-4 overflow-hidden">
             <img
