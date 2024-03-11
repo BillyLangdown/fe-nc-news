@@ -1,17 +1,19 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { postCommentOnArticle } from "./Utils/api";
+import { UserContext } from "../contexts/User";
 
 export default function CommentAdder({ article_id, onNewComment }) {
   const [newComment, setNewComment] = useState("");
   const [isLoadingNewComment, setIsLoadingNewComment] = useState(false);
   const [error, setError] = useState(false);
   const [disabledInput, setDisabledInput] = useState(false);
+  const {user} = useContext(UserContext)
 
   function handleSubmit(event) {
     setIsLoadingNewComment(true);
     setDisabledInput(true);
     event.preventDefault();
-    postCommentOnArticle(article_id, newComment)
+    postCommentOnArticle(article_id, newComment, user)
     .then(() => {
         onNewComment(newComment);
         setIsLoadingNewComment(false);

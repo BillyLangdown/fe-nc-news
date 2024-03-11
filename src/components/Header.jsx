@@ -2,16 +2,20 @@ import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../contexts/User";
 import { getUsers } from "./Utils/api";
 import NClogo from "../assets/nclogocropped.png" 
+import blankDisplay from "../assets/blank-display-picture.webp"
 
 
 export default function Header() {
  const {user, setUser} = useContext(UserContext)
  const [currentUserAvatar, setCurrentUserAvatar] = useState([])
   const [profiles, setProfiles] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
+
     getUsers().then((response) => {
       setProfiles(response);
+      setIsLoading(false)
     });
   }, []); 
 
@@ -26,8 +30,8 @@ export default function Header() {
   return (
     <header>
       <div className='py-3 mb-4 container-fluid d-flex justify-content-around align-items-center '>
-        <img src={NClogo} alt="NC-NEWS Logo" style={{ width: '15rem', height: 'auto' }} className="img-fluid " />
-        <img className='rounded-circle display-picture ' src={currentUserAvatar} alt="User's profile picture" />
+        <img src={NClogo} alt="NC-NEWS Logo" style={{width:'50%', maxWidth: '15rem', height: 'auto' }} className="img-fluid " />
+         {isLoading ? <img className='rounded-circle display-picture ' src={blankDisplay} alt="Default Display picture of human outline" /> :  <img className='rounded-circle display-picture ' src={currentUserAvatar} alt="User's profile picture" />}
       </div>
     </header>
   );

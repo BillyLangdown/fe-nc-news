@@ -63,7 +63,7 @@ function onNewComment(){
         <p className="lead m-3">{article.body}</p>
         <div className="d-flex justify-content-between align-items-center">
           <Votes article={article} article_id={article_id} />
-          <p className="lead">Comments: {article.comment_count}</p>
+          <p className="lead align-self-top">Comments: {article.comment_count}</p>
         </div>
         <DeleteArticle
                 onArticleDeleted={onArticleDeleted}

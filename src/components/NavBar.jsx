@@ -32,7 +32,7 @@ export default function NavBar({ onTopicClick }) {
           </li>
           <li className="nav-item">
           <Link to={"/profile"} className="nav-link">
-            profile
+            Profile
             </Link>
           </li>
           <li className="nav-item dropdown">

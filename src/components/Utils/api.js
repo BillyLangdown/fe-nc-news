@@ -42,11 +42,11 @@ export function patchArticleVotesById(id, voteCount) {
     });
 }
 
-export function postCommentOnArticle(id, newComment) {
+export function postCommentOnArticle(id, newComment, user) {
   return axios
     .post(`https://nc-news-api-vw2o.onrender.com/api/articles/${id}/comments`, {
       body: newComment,
-      author: "cooljmessy",
+      author: user,
     })
     .then(() => {
       console.log("successful post");
