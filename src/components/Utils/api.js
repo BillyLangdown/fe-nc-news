@@ -96,3 +96,16 @@ export function deleteArticleById(article_id) {
       console.log("article deleted");
     });
 }
+
+export function getUsers() {
+  return axios
+    .get(`https://nc-news-api-vw2o.onrender.com/api/users`)
+    .then(({ data }) => {
+      return data.users;
+    })
+    .catch((err) => {
+      if (err) {
+        throw err;
+      }
+    });
+}

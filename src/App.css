@@ -1,14 +1,22 @@
 body {
     overflow-x: hidden;
 }
-
 .display-picture {
-    width: 10%;
-    height: auto;
-    border-radius: 50%;
-    position: relative;
-    margin-left: 50%;
-}
+    width: 6rem;
+    height: 6rem;
+    margin-right: 50px;
+    object-fit: cover;
+
+  }
+  
+  @media (max-width: 768px) {
+    .display-picture {
+      width: 3rem; 
+      height: 3rem;
+      max-width: 60px;
+    }
+  }
+
 
 .custom-margin {
     margin-top: 5%; 
@@ -45,3 +53,20 @@ body {
     left: 50px
 }
 
+
+.profile-card {
+    position: relative;
+    width: 10rem;
+    height: 10rem;
+    overflow: hidden;
+    border-radius: 50%;
+    transition: box-shadow 0.3s ease;
+}
+  .profile-card:hover {
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.4); 
+  }
+
+  .bg-light-orange {
+    background-color: #fff1e3;
+  }
+  

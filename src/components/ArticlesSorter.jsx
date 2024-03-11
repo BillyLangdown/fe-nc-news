@@ -35,23 +35,26 @@ export default function ArticlesSorter({ articles, onSort }) {
   }
 
   return (
-    <div className="d-flex flex-column m-3 m-md-5">
-      <div className="mb-3">
-        <label htmlFor="sortBy" className="m-0 mb-2">Sort by:</label>
-        <select id="sortBy" value={sortBy} onChange={handleSortChange} className="form-select">
-          <option value="date">Date</option>
-          <option value="votes">Votes</option>
-          <option value="comment_count">Comments</option>
-        </select>
-      </div>
-
-      <div className="mb-3">
-        <label htmlFor="sortOrder" className="m-0 mb-2">Order:</label>
-        <select id="sortOrder" value={sortOrder} onChange={handleOrderChange} className="form-select">
-          <option value="asc">Asc</option>
-          <option value="desc">Desc</option>
-        </select>
+    <div className="container">
+      <div className="d-flex flex-column mx-auto m-3 m-md-5">
+        <div className="mb-3">
+          <label htmlFor="sortBy" className="m-0 mb-2">Sort by:</label>
+          <select id="sortBy" value={sortBy} onChange={handleSortChange} className="form-select">
+            <option value="date">Date</option>
+            <option value="votes">Votes</option>
+            <option value="comment_count">Comments</option>
+          </select>
+        </div>
+  
+        <div className="mb-3">
+          <label htmlFor="sortOrder" className="m-0 mb-2">Order:</label>
+          <select id="sortOrder" value={sortOrder} onChange={handleOrderChange} className="form-select">
+            <option value="asc">Asc</option>
+            <option value="desc">Desc</option>
+          </select>
+        </div>
       </div>
     </div>
   );
+  
 }
