@@ -7,7 +7,7 @@ Visit the NC News Web App at https://billyl-nc-news.netlify.app.
 
 Note: It may take a minute to spin up as the API can be slow at the start.
 
-Welcome to the NC News Frontend repository! This application serves as the user interface for the NC News web app. Users can read articles, leave comments, vote on content, sign in with different user profiles, and even contribute by posting new articles.
+Welcome to the NC News Frontend repository! This application serves as the user interface for the NC News web app. Users can read articles, leave comments, vote on content, sign in with different user profiles, and even contribute by posting new articles. This is the 2nd half of the full-stack application. To see the repository for the back-end api see [here](https://github.com/BillyLangdown/news-api) 
 
 ## Getting Started
 Follow the steps below to set up the project on your local machine.
