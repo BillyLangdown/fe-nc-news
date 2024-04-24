@@ -19,9 +19,9 @@ function App() {
 
 
   return (
-    <main className="m-3 bg-light-orange">
+    <main className="m-3 ">
       <Header />
-      <NavBar onTopicClick = {onTopicClick} />
+
       <Routes>
         <Route path="/" element={<ListOfArticles topic={topic} setTopic={setTopic}/>} />
         <Route path="/articles/:article_id" element={<ArticleCard />} />

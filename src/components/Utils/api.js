@@ -16,6 +16,7 @@ export function getArticles(topic) {
     url += `?topic=${topic}`;
   }
   return axios.get(url).then(({ data }) => {
+    console.log(data.articles, "<--- api articles return");
     return data.articles;
   });
 }
