@@ -19,9 +19,8 @@ function App() {
 
 
   return (
-    <main className="m-3 ">
+    <main className="m-3">
       <Header />
-
       <Routes>
         <Route path="/" element={<ListOfArticles topic={topic} setTopic={setTopic}/>} />
         <Route path="/articles/:article_id" element={<ArticleCard />} />

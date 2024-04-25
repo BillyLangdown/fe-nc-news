@@ -34,7 +34,7 @@ export default function Header() {
  
   return (
     <header>
-      <div className='py-3 mb-4 container-fluid d-flex justify-content-between align-items-start '>
+      <div className='py-3 mb-4 container-fluid d-flex justify-content-between align-items-start bg-light rounded '>
         <img src={NClogo} alt="NC-NEWS Logo" style={{width:'50%', maxWidth: '15rem', height: 'auto' }} className="img-fluid " />
         <div className="d-flex flex-row justify-content-end">
           <NavBar onTopicClick = {onTopicClick} />
